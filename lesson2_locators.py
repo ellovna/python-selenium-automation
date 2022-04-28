@@ -16,10 +16,14 @@ driver.find_element(By. XPATH, "//a[@arria-label='Amazon']")
 # By XPath, 2 attributes 'and'
 driver.find_element(By. XPATH, "//a[@class='nav-a' and @data-csa-c-content-id='nav_cs_bestsellers']")
 
+# By XPath using multiple nodes
+driver.find_element(By. XPATH, "//div[@id='nav-xshop-container']//a[text()='Best Sellers']")
+
+
 # By Partial Attribute
 driver.find_element(By. XPATH, "//a[contains(@href, 'nav_cs_bestsellers')]")
 
-#By XPath, By Text
+# By XPath, By Text
 driver.find_element(By. XPATH, "//a[text()='Best Sellers']")
 driver.find_element(By. XPATH, "//span[text()='Help the people of Ukraine.']")
 
