@@ -19,22 +19,22 @@ driver.find_element(By. ID, 'ap_email')
 driver.find_element(By. XPATH, "//input[@id='continue']")
 
 # Need help link
-driver.find_element(By. XPATH, '//a[@class="a-expander-header a-declarative a-expander-inline-header a-link-expander"]')
+driver.find_element(By. XPATH, '//a[@class="a-expander-header a-declarative a-expander-inline-header a-link-expander"]').click()
 
 # Forgot your password link
-driver.find_element(By. XPATH, "//*[@id='auth-fpp-link-bottom']")
+#driver.find_element(By. XPATH, "//*[@id='auth-fpp-link-bottom']").click()
 
 # Other issues with Sign-In link
-driver.find_element(By. XPATH, "//*[@id='ap-other-signin-issues-link']")
+driver.find_element(By. XPATH, "//*[@id='ap-other-signin-issues-link']").click()
 
 # Create your Amazon account button
-driver.find_element(By. XPATH, "//*[@id='createAccountSubmit']")
+driver.find_element(By. XPATH, "//*[@id='createAccountSubmit']").click()
 
 # *Conditions of use link
-driver.find_element(By. XPATH, "//*[@id='a-page']/div[1]/div[4]/div[2]/a[1]")
+driver.find_element(By. XPATH, "//*[@id='a-page']/div[1]/div[4]/div[2]/a[1]").click()
 
 # *Privacy Notice link
-driver.find_element(By. XPATH, "//*[@id='a-page']/div[1]/div[4]/div[2]/a[2]")
+driver.find_element(By. XPATH, "//*[@id='a-page']/div[1]/div[4]/div[2]/a[2]").click()
 
 time.sleep(2)
 driver.quit()
