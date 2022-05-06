@@ -3,17 +3,17 @@ from selenium.webdriver.common.by import By
 from time import sleep
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome(executable_path=r'C:\Users\Home PC\Downloads\chromedriver_win32\chromedriver.exe')
+driver = webdriver.Chrome(executable_path='/Users/ellaoroz/Desktop/chromedriver')
 driver.get('https://www.amazon.com/gp/help/customer/display.html')
 
 
 search_bar = driver.find_element(By.ID, "helpsearch")
-search_bar.send_keys("Cancel items")
+search_bar.send_keys("Cancel Items")
 search_bar.send_keys(Keys.ENTER)
 
-actual_result = driver.find_element(By.XPATH, "//*[@id='a-page']/div[2]/div[2]/div[1]/div/div[2]/div/div/h1").text
+actual_result = driver.find_element(By.XPATH, "//div[@class='help-content']/h1").text
 # actual_result = driver.find_element(By. XPATH, "//*[@id='hubHelpSearchInput']").text
-expected_result = 'Cancel'
+expected_result = 'Cancel Items or Orders'
 
 
 sleep(2)

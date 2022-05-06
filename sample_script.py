@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 # init driver
-driver = webdriver.Chrome(executable_path=r'C:\Users\Home PC\Downloads\chromedriver_win32\chromedriver.exe')
+driver = webdriver.Chrome(executable_path='Users/ellaoroz/Desktop/chromedriver')
 driver.maximize_window()
 
 # open the url
