@@ -20,10 +20,10 @@ def search_amazon(context, search_word):
      context.driver.find_element(*SEARCH_BTN).click()
 
 
-# @then('Verify search results for {expected_result} is shown')
-# def verify_search_results(context, expected_result):
-#     actual_result = context.driver.find_element(*SEARCH_RESULT_TEXT).text
-#     assert expected_result == actual_result, f'Error! Actual text {actual_result} does not match {expected_result}'
+@then('Verify search results for {expected_result} is shown')
+def verify_search_results(context, expected_result):
+    actual_result = context.driver.find_element(*SEARCH_RESULT_TEXT).text
+    assert expected_result == actual_result, f'Error! Actual text {actual_result} does not match {expected_result}'
 
 
 # @then('Verify hamburger menu btn present')
@@ -37,12 +37,12 @@ def search_amazon(context, search_word):
 #     context.driver.find_element(*HAM_MENU_BTN)
 
 
-
-@then('Verify there are {expected_amount} footer links')
-def verify_footer_links_count(context, expected_amount):
-    expected_amount = int(expected_amount)
-    footer_links = context.driver.find_elements(*FOOTER_LINKS)
-    assert len(footer_links) == expected_amount, f'Expected {expected_amount} links, but got {len(footer_links)}'
-
+#
+# @then('Verify there are {expected_amount} footer links')
+# def verify_footer_links_count(context, expected_amount):
+#     expected_amount = int(expected_amount)
+#     footer_links = context.driver.find_elements(*FOOTER_LINKS)
+#     assert len(footer_links) == expected_amount, f'Expected {expected_amount} links, but got {len(footer_links)}'
+#
 
 

@@ -16,3 +16,5 @@ def open_cart_page(context):
 def verify_cart_count(context, expected_count):
     actual_text = context.driver.find_element(*CART).text
     assert expected_count == actual_text, f'Expected {expected_count}, but got {actual_text}'
+
+

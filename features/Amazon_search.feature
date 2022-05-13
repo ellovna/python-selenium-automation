@@ -37,6 +37,27 @@ Feature: Tests for Amazon search
 #    Then Verify hamburger menu btn present
 
 
-  Scenario: User sees correct amount of footer links
-    Given Open Amazon page
-    Then Verify there are 38 footer links
+#  Scenario: User sees correct amount of footer links
+#    Given Open Amazon page
+#    Then Verify there are 38 footer links
+
+#
+#  Scenario: User can sees correct amount of BestSellers links
+#    Given Open Amazon BestSellers page
+#    Then Verify there are 4 BestSellers links
+
+# Test case #2
+
+#  Scenario: User can add a product to the cart
+#    Given Open Amazon page
+#    When Search for Toys
+#    And Click on the first product
+#    And Click on Add to cart button
+#    And Open cart page
+#    Then Verify cart has 1 item(s)
+
+
+  Scenario: User can sees Customer Service's UI elements
+    Given Open Amazon Customer Service page
+    Then Verify there are 9 Issue Card wrapper links
+    Then Verify there are 11 Help Topics links
