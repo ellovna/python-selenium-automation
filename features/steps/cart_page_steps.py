@@ -18,3 +18,7 @@ def verify_cart_count(context, expected_count):
     assert expected_count == actual_text, f'Expected {expected_count}, but got {actual_text}'
 
 
+@then('Verify cart has correct product')
+def verify_product_name(context):
+    actual_name = context.driver.find_element(*PRODUCT_NAME).text
+    assert context.product_name
