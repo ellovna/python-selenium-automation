@@ -7,8 +7,8 @@ from time import sleep
 
 SEARCH_INPUT = (By. ID, 'twotabsearchtextbox')
 SEARCH_BTN = (By.ID, 'nav-search-submit-button')
-#SEARCH_RESULT_TEXT = (By. XPATH, '//*[@id="search"]/span/div/h1/div/div[1]/div/div/span[3]')
-#HAM_MENU_BTN = (By. ID, 'nav-hamburger-menu')
+SEARCH_RESULT_TEXT = (By. XPATH, '//*[@id="search"]/span/div/h1/div/div[1]/div/div/span[3]')
+HAM_MENU_BTN = (By. ID, 'nav-hamburger-menu')
 FOOTER_LINKS = (By. CSS_SELECTOR, 'td.navFooterDescItem a')
 SIGN_IN_BTN = (By. CSS_SELECTOR, '#nav-signin-tooltip .nav-action-inner')
 SEARCH_RESULTS = (By. CSS_SELECTOR, "[data-component-type='s-search-result']")
@@ -27,10 +27,16 @@ def search_amazon(context, search_word):
      context.driver.find_element(*SEARCH_INPUT).send_keys(search_word)
      context.driver.find_element(*SEARCH_BTN).click()
 
-#
-# @when('Click on button from SignIn popup')
-# def click_sign_in_btn(context):
-#     context.driver.wait.until(EC.element_to_be_clickable(SIGN_IN_BTN), 'Sign in btn not clickable').click()
+
+@when('Wait for {seconds} seconds')
+def wait_sec(context, seconds):
+    sleep(int(seconds))
+
+
+
+@when('Click on button from SignIn popup')
+def click_sign_in_btn(context):
+    context.driver.wait.until(EC.element_to_be_clickable(SIGN_IN_BTN), 'Sign in btn not clickable').click()
 
 #
 # @then('Verify search results for {expected_result} is shown')
@@ -44,13 +50,13 @@ def search_amazon(context, search_word):
 #     elements = context.driver.find_elements(*HAM_MENU_BTN)
 #     assert len(elements) == 1, f'Error: Expected 1 item, but got {len(elements)}'
 
-#
-# @then('Verify hamburger menu btn present')
-# def verify_ham_menu(context):
-#     context.driver.find_element(*HAM_MENU_BTN)
+
+@then('Verify hamburger menu btn present')
+def verify_ham_menu(context):
+    ham_menu = context.driver.find_element(*HAM_MENU_BTN)
+    ham_menu.click()
 
 
-#
 # @then('Verify there are {expected_amount} footer links')
 # def verify_footer_links_count(context, expected_amount):
 #     expected_amount = int(expected_amount)
@@ -71,5 +77,19 @@ def verify_products_name_img(context):
 
 
 
+@then('SignIn popup is present')
+def verify_sign_in_popup_present(context):
+    context.driver.wait.until(EC.element_to_be_clickable(SIGN_IN_BTN), 'Sign in btn not clickable')
 
+
+
+# @then('SignIn popup disappears')
+# def verify_sign_in_popup_disappear(context):
+#     context.driver.wait.until(EC.invisibility_of_element_located(SIGN_IN_BTN), 'Sign in btn did not disappear')
+#
+
+
+@then('SignIn popup disappears')
+def verify_sign_in_popup_disappear(context):
+    context.driver.wait.until_not(EC.element_to_be_clickable(SIGN_IN_BTN), 'Sign in btn did not disappear')
 

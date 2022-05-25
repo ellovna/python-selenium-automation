@@ -31,10 +31,10 @@ Feature: Tests for Amazon search
 #    Then Verify cart has 1 item(s)
 
 
-#
-#  Scenario: User sees ham menu btn on the main page
-#    Given Open Amazon page
-#    Then Verify hamburger menu btn present
+
+  Scenario: User sees ham menu btn on the main page
+    Given Open Amazon page
+    Then Verify hamburger menu btn present
 
 
 #  Scenario: User sees correct amount of footer links
