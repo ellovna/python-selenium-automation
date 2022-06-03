@@ -11,6 +11,8 @@ NEW_RELEASES_BTN = (By. CSS_SELECTOR, 'a[href*="/gp/new-releases/ref=zg_bs_tab"]
 MOVERS_SHAKERS_BTN = (By. CSS_SELECTOR, 'a[href*="/gp/movers-and-shakers/ref=zg_bsnr_tab"]')
 MOST_WISHED_FOR_BTN = (By. CSS_SELECTOR, 'a[href="/gp/most-wished-for/ref=zg_bsms_tab"]')
 GIFT_IDEAS_BTN = (By. CSS_SELECTOR, 'a[href*="/gp/most-gifted/ref=zg_mw_tab"]')
+# TOP_LINKS = (By.CSS_SELECTOR, "#CardInstancebEE_l87YctXw03PpM_3rZg")
+top_links = (By. CSS_SELECTOR, 'a[href*="/Best-Sellers/zgbs/ref=zg_bs_tab"]'), (By. CSS_SELECTOR, 'a[href*="/gp/new-releases/ref=zg_bs_tab"]'), (By. CSS_SELECTOR, 'a[href*="/gp/movers-and-shakers/ref=zg_bsnr_tab"]'), (By. CSS_SELECTOR, 'a[href="/gp/most-wished-for/ref=zg_bsms_tab"]'), (By. CSS_SELECTOR, 'a[href*="/gp/most-gifted/ref=zg_mw_tab"]')
 
 
 @given('Open Amazon Bestsellers')
@@ -63,5 +65,13 @@ def click_on_gift_ideas_btn(context):
 def user_sees_text(context, text):
     context.driver.find_element(*HEADER)
 
+
+    for x in range(len(top_links)):
+        link_to_click = context.driver.find_elements(*TOP_LINKS)[x]
+        link_text = link_to_click.text
+        link_to_click.click()
+        sleep(1)
+        new_text = context.driver.find_element(*HEADER).text
+        assert link_text in new_text, f'Expected {link_text} to be in {header_text}'
 
 
