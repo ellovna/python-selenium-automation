@@ -8,13 +8,13 @@ Feature: Tests for Amazon search
 #    Then Verify search results for "coffee" are shown
 #
 #
-#  Scenario Outline: Verify that user can search for products
-#    Given Open Amazon page
-#    When Search for <search_word>
-#    Then Verify search results for <search_result> is shown
-#    Examples:
-#    |search_word  |search_result  |
-#    |coffee       |"coffee"       |
+  Scenario Outline: Verify that user can search for products
+    Given Open Amazon page
+    When Search for <search_word>
+    Then Verify search results for <search_result> is shown
+    Examples:
+    |search_word  |search_result  |
+    |coffee       |"coffee"       |
 
 
 #
@@ -31,10 +31,10 @@ Feature: Tests for Amazon search
 #    Then Verify cart has 1 item(s)
 
 
-
-  Scenario: User sees ham menu btn on the main page
-    Given Open Amazon page
-    Then Verify hamburger menu btn present
+#
+#  Scenario: User sees ham menu btn on the main page
+#    Given Open Amazon page
+#    Then Verify hamburger menu btn present
 
 
 #  Scenario: User sees correct amount of footer links
@@ -66,9 +66,9 @@ Feature: Tests for Amazon search
 #    Then Verify there are 11 Help Topics links
 
 
-
-  Scenario: User can see a product name and a product image
-    Given Open Amazon page
-    When Search for Toys
-    Then Verify that every product has a name and image
-
+#
+#  Scenario: User can see a product name and a product image
+#    Given Open Amazon page
+#    When Search for Toys
+#    Then Verify that every product has a name and image
+#
