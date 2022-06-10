@@ -22,4 +22,6 @@ Feature: Tests for bestseller functionality
 #    When Click on Gift Ideas
 #    Then Verify user sees "Amazon Gift Ideas" text
 
-
+#  Scenario: Bestsellers links can be opened
+#    Given Open Amazon Bestsellers
+#    Then User can click through top links and verify user sees {text} text

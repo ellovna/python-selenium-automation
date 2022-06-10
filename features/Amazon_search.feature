@@ -8,27 +8,27 @@ Feature: Tests for Amazon search
 #    Then Verify search results for "coffee" are shown
 #
 #
-  Scenario Outline: Verify that user can search for products
-    Given Open Amazon page
-    When Search for <search_word>
-    Then Verify search results for <search_result> is shown
-    Examples:
-    |search_word  |search_result  |
-    |coffee       |"coffee"       |
-
-
-#
-#
-#Feature: Tests for Search on Amazon
-#
-#
-#  Scenario: User can add a product to the cart
+#  Scenario Outline: Verify that user can search for products
 #    Given Open Amazon page
-#    When Search for Spoons
-#    And Click on the first product
-#    And Click on Add to cart button
-#    And Open cart page
-#    Then Verify cart has 1 item(s)
+#    When Search for <search_word>
+#    Then Verify search results for <search_result> is shown
+#    Examples:
+#    |search_word  |search_result  |
+#    |coffee       |"coffee"       |
+
+
+
+
+Feature: Tests for Search on Amazon
+
+
+  Scenario: User can add a product to the cart
+    Given Open Amazon page
+    When Search for Spoons
+    And Click on the first product
+    And Click on Add to cart button
+    And Open cart page
+    Then Verify cart has 1 item(s)
 
 
 #
