@@ -14,8 +14,8 @@ SIGN_IN_BTN = (By. CSS_SELECTOR, '#nav-signin-tooltip .nav-action-inner')
 SEARCH_RESULTS = (By. CSS_SELECTOR, "[data-component-type='s-search-result']")
 PRODUCT_TITLE = (By. CSS_SELECTOR, 'h2 span.a-text-normal')
 PRODUCT_IMG = (By. CSS_SELECTOR, 'img[data-image-latency="s-product-image"]')
-ORDERS_LINK = (By. XPATH, '//*[@id="nav-orders"]/span[2]')
-SIGN_IN_PAGE = (By. XPATH, '//*[@id="authportal-main-section"]/div[2]/div/div[1]/form/div/div/div/h1')
+ORDERS_BTN = (By. XPATH, '//*[@id="nav-orders"]/span[2]')
+SIGN_IN_P = (By. XPATH, '//*[@id="authportal-main-section"]/div[2]/div/div[1]/form/div/div/div/h1')
 
 
 @given("Open Amazon page")
@@ -24,9 +24,9 @@ def open_amazon(context):
     context.app.main_page.open_main_page()
 
 
-@when("Click Amazon Orders link")
-def orders_link(self):
-    self.driver.find_element(*ORDERS_LINK).click()
+@when("Click Amazon Orders btn")
+def orders_link(context):
+    context.app.header.sign_in()
 
 
 @when("Search for {search_word}")
@@ -55,7 +55,7 @@ def verify_search_results(context, expected_result):
 
 @then('Verify Sign In page is opened')
 def verify_sign_in_page_opened(context):
-    context.driver.find_element(*SIGN_IN_PAGE)
+    context.driver.find_element(*SIGN_IN_P)
 
 
 # @then('Verify hamburger menu btn present')

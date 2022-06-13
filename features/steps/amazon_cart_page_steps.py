@@ -14,17 +14,20 @@ def open_cart_page(self):
     # context.driver.get('https://www.amazon.com/gp/cart/view.html?ref_=nav_cart')
 
 
-# @then("Verify 'Your Amazon Cart is empty' text present")
-# def amazon_cart(self):
-#     self.driver.find_element(*CART_TEXT)
+@then("Verify 'Your Amazon Cart is empty' text present")
+def amazon_cart(context):
+    context.app.cart_page.amazon_cart()
+
 # def amazon_cart(context):
 #     context.driver.get(*CART_TEXT)
 
 
 @then('Verify cart has {expected_count} item(s)')
 def verify_cart_count(context, expected_count):
-    actual_text = context.driver.find_element(*CART).text
-    assert expected_count == actual_text, f'Expected {expected_count}, but got {actual_text}'
+    context.app.cart_page.cart_count()
+
+    # actual_text = context.driver.find_element(*CART).text
+    # assert expected_count == actual_text, f'Expected {expected_count}, but got {actual_text}'
 
 
 @then('Verify cart has correct product')

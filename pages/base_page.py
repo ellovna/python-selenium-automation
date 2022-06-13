@@ -13,6 +13,9 @@ class Page:
     def click(self, *locator):
         self.driver.find_element(*locator).click()
 
+    def click_orders(self, *locator):
+        self.driver.find_element(*locator).click()
+
     def find_element(self, *locator):
         return self.driver.find_element(*locator)
 

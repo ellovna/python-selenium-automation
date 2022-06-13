@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 
+
 CLICK_RESULT_TEXT = (By. XPATH, '//*[@id="sc-item-Cae704e96-c616-420c-9635-499697384c50"]')
 
 
