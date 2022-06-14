@@ -72,3 +72,19 @@ Feature: Tests for Search on Amazon
 #    When Search for Toys
 #    Then Verify that every product has a name and image
 #
+   Scenario: User can see language options
+     Given Open Amazon page
+     When Hover over language options
+     Then Verify Spanish option present
+
+   Scenario Outline: User can select and search in a department
+     Given Open Amazon page
+     When Select department by <dept_alias>
+     And Search for <search_query>
+     Then Verify <selected_dept> department is selected
+     Examples:
+     |dept_alias  |search_query   |selected_dept |
+     |stripbooks  |Faust          |books         |
+     |audible     |Alice in       |audible       |
+     
+

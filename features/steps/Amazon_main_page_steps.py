@@ -29,6 +29,15 @@ def orders_link(context):
     context.app.header.sign_in()
 
 
+@when('Hover over language options')
+def hover_lang(context):
+    context.app.header.hover_lang()
+
+
+@when('Select department by {alias}')
+def select_dept(context, alias):
+    context.app.header.select_dept(alias)
+
 @when("Search for {search_word}")
 def search_amazon(context, search_word):
     context.app.header.search_amazon(search_word)
@@ -46,6 +55,11 @@ def click_sign_in_btn(context):
     context.driver.wait.until(EC.element_to_be_clickable(SIGN_IN_BTN), 'Sign in btn not clickable').click()
 
 
+@then('Verify Spanish option present')
+def verify_spanish_lang(context):
+    context.app.header.verify_spanish_lang()
+
+
 @then('Verify search results for {expected_result} is shown')
 def verify_search_results(context, expected_result):
     context.app.search_results_page.verify_search_results(expected_result)
@@ -56,6 +70,11 @@ def verify_search_results(context, expected_result):
 @then('Verify Sign In page is opened')
 def verify_sign_in_page_opened(context):
     context.driver.find_element(*SIGN_IN_P)
+
+
+@then('Verify {department} department is selected')
+def verify_department(context, department):
+    context.app.header.verify_department(department)
 
 
 # @then('Verify hamburger menu btn present')
