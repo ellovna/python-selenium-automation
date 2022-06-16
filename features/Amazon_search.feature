@@ -77,6 +77,13 @@ Feature: Tests for Search on Amazon
      When Hover over language options
      Then Verify Spanish option present
 
+     Scenario: User can see the deals
+       Given Open Amazon page
+       When Search for Hoodie
+       And Click on the first product
+       And Hover over New Arrivals
+       Then Verify options for women is present
+
    Scenario Outline: User can select and search in a department
      Given Open Amazon page
      When Select department by <dept_alias>
@@ -86,5 +93,7 @@ Feature: Tests for Search on Amazon
      |dept_alias  |search_query   |selected_dept |
      |stripbooks  |Faust          |books         |
      |audible     |Alice in       |audible       |
-     
+     |beauty      |lipstick       |beauty        |
+     |wholefoods  |Strawberry     |wholefoods    |
+     |luxury      |Bags           |luxury        |
 

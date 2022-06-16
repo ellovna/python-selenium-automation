@@ -6,7 +6,6 @@ from pages.sign_in_page import SignInPage
 from pages.cart_page import AmazonCart
 from pages.product_page import ProductPage
 
-
 class Application:
 
     def __init__(self, driver):

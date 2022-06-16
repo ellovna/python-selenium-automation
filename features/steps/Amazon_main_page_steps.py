@@ -34,9 +34,15 @@ def hover_lang(context):
     context.app.header.hover_lang()
 
 
+@when('Hover over New Arrivals')
+def hover_new_arrivals(context):
+    context.app.header.hover_new_arrivals()
+
+
 @when('Select department by {alias}')
 def select_dept(context, alias):
     context.app.header.select_dept(alias)
+
 
 @when("Search for {search_word}")
 def search_amazon(context, search_word):
@@ -59,6 +65,10 @@ def click_sign_in_btn(context):
 def verify_spanish_lang(context):
     context.app.header.verify_spanish_lang()
 
+
+@then('Verify options for women is present')
+def verify_women_opt(context):
+    context.app.header.verify_women_opt()
 
 @then('Verify search results for {expected_result} is shown')
 def verify_search_results(context, expected_result):
